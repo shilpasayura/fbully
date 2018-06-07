@@ -1,0 +1,911 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+<title>Cyber Bullyness Assessment</title>
+<meta name="keywords" content="Ciber Bondade auto evaluación Cyber Harassment Bully Assessment Test" /> 
+<meta name="description" content="Ciber Bondade auto evaluación Cyber Bulliness Self Assessment " />
+<meta name="author" content="Poornima Meegammana, Niranjan Meegammana & N.P. Vishwa Kumara, Adela Goberna,Pedro Vilela, Elaine Cavalheiro: Shilpa Sayura Foundation: Sri Lanka, ISOC Youth SIG" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<meta property="fb:app_id"          content="1632456073686604" /> 
+<meta property="og:type"            content="game" /> 
+<meta property="og:url" content="https://shilpasayura.com/dev/fbully/">
+<meta property="og:title" content="Are you a Cyber Bully? OR Cyber Saint!"/>
+<meta property="og:image" content="https://shilpasayura.com/dev/fbully/bully.png"/>
+<meta property="og:description" content="How is your Cyber Goodness ? Are you a Cyber Bully or Cyber Saint. Self test now!"/>
+
+<style>
+
+body{
+font-family:Roboto,sans-serif;
+background:#093947;color:#fff;
+font-size:28px;
+}
+
+#xpage{
+width:100%;
+/*max-width:540px;*/
+height:auto;
+border:0px solid #294a7b;
+text-align:center;
+over-flow:auto;
+}
+
+ol,ul{
+margin:0px;
+}
+
+#ux{
+margin:0.5em;
+margin-left:1em;
+}
+.sel{
+padding:5px;
+padding-left:20px;
+padding-right:20px;
+background:#000;
+color:#ccc;
+font-size:24px;
+}
+
+
+.btn{
+margin:5px;
+padding:5px;
+padding-left:20px;
+padding-right:20px;
+border-radius:10px;
+background:#000;
+color:#ccc;
+font-family:Roboto,kaputaunicode, sans-serif;
+cursor:pointer;
+}
+.strong{
+font-weight:bold;
+}
+.pointer{
+cursor:pointer;
+}
+.xnext {
+
+}
+.xcenter{
+text-align:center;
+}
+.restart{
+padding-right:60px;
+background-image:url(r_ar.png);
+background-position: right; 
+background-size: 40px 40px;
+background-repeat:no-repeat;
+}
+.h1x{font-size:32px;}
+.h2x{font-size:28px;}
+.h3x{font-size:20px;font-family:Roboto,kaputaunicode;}
+.h4x{font-size:18px;}
+.h5x{font-size:14px;}
+
+a{color:#f57900}
+a:hover{text-decoration:none}
+a:active{color:#962b00}
+
+.share img{
+margin:5px;
+}
+.imgx{
+margin:10px;
+border-radius:20px;
+border:8px solid black;
+}
+
+.imgx2{
+margin:10px;
+border-radius:10px;
+border:4px solid black;
+width:90%;
+}
+.displaynone{
+display:none;
+}
+
+
+#xheader{
+background:#0b2230;
+background-image:url(logo.png);
+background-position: right; 
+background-size: 40px 40px;
+background-repeat:no-repeat;
+margin:0.0em;
+text-shadow: 2px 2px #000;
+box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+color: #07b5fe;
+padding:0.1em;
+padding-left:0px;
+}
+
+.White{color:#fff}
+.Black{color:#000}
+.Red{color:red;}
+.Orange{color:orange;}
+.Yellow{color:yellow;}
+.Blue{color:#14a9d6;}
+.Lablue{07b5fe;}
+.Green{color:#65c359;}
+.Purple{color:purple}
+.Pink{color:pink}
+.Magenta{color:magenta}
+.Brown{color:#e7b681}
+.Gray{color:#efefef}
+.Pink{color:#ff9e99}
+.Silver{color:#ccc}
+
+.qoption ,.qtext{
+text-align:left;
+margin:0.2em;
+padding-left:0.5em;
+font-family:Roboto,kaputaunicode, sans-serif;
+}
+.qoption {
+margin-left:1.5em;
+padding:5px;
+padding-right :80px;
+background:#0b2230;
+background-image:url(logo.png);
+background-position: right; 
+background-size: 40px 40px;
+background-repeat:no-repeat;
+border-radius:10px;
+width:80%;
+max-width:400px'
+}
+#analysis{
+}
+
+.analyzetext{
+background:#111211;
+padding:10px;
+}
+#xfooter{
+margin-top:1em;
+background:#0b2230;
+color: #ccc;
+padding:0.1em;
+padding-left:60px;
+margin-left:0.0em;
+}
+.xleft{
+text-align:left;
+}
+
+.grade{
+
+}
+.gradetitle{
+font-size:1.6em;
+}
+
+.gradetext{
+font-size:1.3em;
+}
+.go{
+cursor:pointer;
+}
+.privacy a{
+color:#19748e;
+text-decoration:none;
+}
+</style>
+
+
+
+<script>
+var xlang=1;
+var actq;
+var answers=[];
+var questions=[];
+var responses=[];
+var xstrings=[];
+var bullyscore=0;
+var nq=18;
+
+function home(){
+displaydiv("xpage","splash");
+}
+
+function isVarExsist(variable){
+	if (typeof variable === 'undefined' || variable === null) {
+    // variable is undefined or null
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+
+function getlang(){
+var parameters = location.search.substring(1).split("&");
+var temp = parameters[0].split("=");
+xlang=unescape(temp[1]);
+
+	if (xlang == "undefined"){
+		xlang=0;
+	}
+}
+
+function setfonts(){
+    
+	if (xlang==2){
+		document.body.style.fontSize="12px";
+		var elms = document.getElementsByClassName('h1x')
+		debugger;
+		for (var i = 0; i < elms.length; i++) {
+			//if (elms[i].getAttribute("fontSize") === "account"){
+			elms[i].setAttribute("fontSize", "12px");
+			//}
+		}
+	}
+	else{
+		document.body.style.fontSize="24px";
+	}
+}
+
+function xlanguage(opt){
+	xlang++;
+	if (xlang >2){
+		xlang=0;
+	}
+	
+	//setfonts();
+
+	var xstr=splashscr();
+	document.getElementById("splash").innerHTML=xstr;
+	
+	//xstr=introscr();
+	//document.getElementById("intro").innerHTML=xstr;
+	
+	xstr=introscr();
+	document.getElementById("intro").innerHTML=xstr;
+	
+	xstr=homescr();
+	document.getElementById("home").innerHTML=xstr;
+	
+	//getlang();
+	xstr=qlist();
+	document.getElementById("qlist").innerHTML=xstr;
+	
+	if (opt==0){
+		displaydiv("xpage","splash");
+	}
+	else{
+	    displaydiv("xpage","home");
+		displaydiv("ux","intro");
+	}
+	
+	privacy();
+	//location.href="index.html?l="+ xlang;
+}
+
+function respectgirls(){
+location.href="https://www.facebook.com/respectgirlsoninternet/";
+}
+
+function shilpasayura(){
+location.href="http://www.shilpasayura.org";
+}
+
+function appsmart(){
+location.href="http://www.shilpasayura.org";
+}
+
+
+for (var i = 0; i < nq; i++){
+answers[i]=-1;
+}
+
+function analyze(){
+var xs="";
+	for (i = 0; i < nq; i++) {
+	var n=answers[i];
+		
+	switch (n) {
+    case 0:
+        xc="White";
+        break;
+    case 1:
+        xc="Orange";
+        break;
+    case 3:
+        xc="Red";
+        break;
+    default:
+        xc="White";
+        break;
+	}
+
+		var ni=i +1;
+		xs+='<div class="analyzetext xleft"><span class="'+ xc + '">' + ni + '. ' + questions[i] + '</span></div>';
+		
+		
+	}
+	
+	var xbutn='<div class="rtnhome" ><button class="btn h3x restart" onclick="xstart()" type="button">'+ xstrings["restart"][xlang]+'</button></div>';
+	var xresult='<div id="analysis" class="result">'+ xs   + xbutn + '<div>';	
+	document.getElementById("ux").innerHTML=xresult;
+}
+function calculate(){
+
+    var sum=0;
+	for (i = 0; i < nq; i++) {
+		if (answers[i] >=0){
+			sum=sum+answers[i];
+		}
+	}
+    
+	if (sum <=1){
+		xr="result1";
+	}else if ((sum > 1) && (sum <=10))    {
+		xr="result2";
+	} else if ((sum > 10) && (sum <=18) )   {
+		xr="result3";
+	} else  {
+		xr="result4";
+	}  
+	
+	//if (xlang==2){
+	// var xxlang=0;
+	//}
+	//else{
+	//	xxlang=xlang;
+	//}
+	
+	xxlang=xlang;
+	
+	xr=xr+"_"+ xxlang;
+	
+	bullyscore=sum;
+	xstrings["analyze"]=["Analyze", "Análisis", "Análise"];
+	xstrings["restart"]=["Re Start", "Reiniciar", "Recomeçar"];
+	xstrings["YourCyberBullyness"]=["", "Tú Ciber Bullyness", "Seu Cyber Opressão é"]
+	
+	var xstr='<div class="score xleft h3x">'+ xstrings["YourCyberBullyness"][xlang]+'<span class="Blue"> : ' + bullyscore +'</div>';
+	var xbutn='<div class="rtnhome" ><button class="btn h3x restart" onclick="analyze()" type="button">' + xstrings["analyze"][xlang] + '</button></div>';
+	xbutn+='<div class="rtnhome" ><button class="btn h3x restart" onclick="xstart()" type="button">'+ xstrings["restart"][xlang]+ '</button></div>';
+	
+	var xinfo=document.getElementById(xr).innerHTML;
+	var xresult='<div id="result" class="result">'+ xstr + xinfo  + xbutn + '<div>';	
+	document.getElementById("ux").innerHTML=xresult;
+}
+
+
+
+function qlist(){
+if (xlang==0) {
+questions[0]="Signed on using someone else’s user name to gather info?";
+questions[1]="Impersonated someone online?";
+questions[2]="Teased or frightened someone online";
+questions[3]="Not told someone who you really are online?";
+questions[4]="Forwarded a private chat conversation without the permission of the other person?";
+questions[5]="Changed your profile status to embarrass or frighten someone?";
+questions[6]="Posted pictures of someone without their consent?";
+questions[7]="Created an Internet poll about someone without their consent?";
+questions[8]="Used information found online to follow, tease, embarrass or harass someone?";
+questions[9]="Sent rude or scary things to someone, even for a joke ?";
+questions[10]="Used bad language online?";
+questions[11]="Signed someone else up for something online without their permission?";
+questions[12]="Used a profile or e-mail address that looked like someone else’s?";
+questions[13]="Used someone else’s password for any reason without their permission?";
+questions[14]="Hacked into someone else’s computer or sent a virus or Trojan horse to them?";
+questions[15]="Insulted someone in a chat room?";
+questions[16]="Posted rude things or lies about someone online?";
+questions[17]="Commented online with rude or mean things?";
+
+responses[0]="Never done it";
+responses[1]="1 or 2 times";
+responses[2]="More than 5";
+}else if (xlang==1){
+questions[0]="Logou com o nome de usuário de outra pessoa para obter informações?";
+questions[1]="Se passou por outra pessoa online?";
+questions[2]="Provocou ou assustou alguém online?";
+questions[3]="Não disse a alguém quem você realmente era online?";
+questions[4]="Encaminhou uma conversa de chat privado sem a permissão da outra pessoa?";
+questions[5]="Mudou seu status do perfil para envergonhar ou assustar alguém?";
+questions[6]="Postou fotos de alguém sem sua permissão?";
+questions[7]="Criou uma votação ou enquete na internet sobre alguém sem sua permissão?";
+questions[8]="Usou informação encontrada online para seguir, provocar, envergonhar ou molestar alguém?";
+questions[9]="Enviou coisas rudes ou assustadoras a alguém, mesmo sendo uma brincadeira?";
+questions[10]="Usou linguagem impropria ou xingamentos online?";
+questions[11]="Confirmou alguém em algo (Evento, promoção, participação, etc) online sem sua permissão?";
+questions[12]="Usou um perfil ou endereço de email que se parecia com o de outra pessoa?";
+questions[13]="Usou a senha de alguém por alguma razão sem a sua permissão?";
+questions[14]="Hackeou o computador de alguém ou enviou vírus ou Cavalo de Tróia para ela?";
+questions[15]="Insultou alguém em uma sala de chat?";
+questions[16]="Postou coisas rudes ou mentiras sobre alguém online?";
+questions[17]="Comentou online com coisas rudes ou insultos?";
+
+responses[0]="Nunca";
+responses[1]="1 ou 2 vezes";
+responses[2]="Mais de 5 vezes";
+}else{
+
+questions[0]="Logou com o nome de usuário de outra pessoa para obter informações?"
+questions[1]="Se passou por outra pessoa online?"
+questions[2]="Provocou ou assustou alguém online?"
+questions[3]="Não disse a alguém quem você realmente era online?"
+questions[4]="Encaminhou uma conversa de chat privado sem a permissão da outra pessoa?"
+questions[5]="Mudou seu status do perfil para envergonhar ou assustar alguém?"
+questions[6]="Postou fotos de alguém sem sua permissão?"
+questions[7]="Criou uma votação ou enquete na internet sobre alguém sem sua permissão?"
+questions[8]="Usou informação encontrada online para seguir, provocar, envergonhar ou molestar alguém?"
+questions[9]="Enviou coisas rudes ou assustadoras a alguém, mesmo sendo uma brincadeira?"
+questions[10]="Usou linguagem impropria ou xingamentos online?"
+questions[11]="Confirmou alguém em algo (Evento, promoção, participação, etc) online sem sua permissão?"
+questions[12]="Usou um perfil ou endereço de email que se parecia com o de outra pessoa?"
+questions[13]="Usou a senha de alguém por alguma razão sem a sua permissão?"
+questions[14]="Hackeou o computador de alguém ou enviou vírus ou Cavalo de Tróia para ela?"
+questions[15]="Insultou alguém em uma sala de chat?"
+questions[16]="Postou coisas rudes ou mentiras sobre alguém online?"
+questions[17]="Comentou online com coisas rudes ou insultos?"
+
+responses[0]="Nunca";
+responses[1]="1 ou 2 vezes";
+responses[2]="Mais de 5 vezes";
+
+}
+xstrings["next"]=["NEXT", "Siguiente", "Próximo"];
+xstr="";
+for(var i = 0; i < nq; i++){
+	xstr+=makeq(i, questions[i]);
+}
+return xstr;
+}
+
+function makeq(id, text ){
+var n=parseInt(id);
+n=n+1;
+var xc='<div id="dq'+id+'"  class="displaynone">';
+xc+='<div class="qtext"><span class="qnum h2x">' + n + '. of 18 </span><br/><span class="text h3x Yellow">'+  text + '</span></div>';
+xc+='<div class="question" id="qform' + id + '">';
+xc+='<div class="xleft" id="qopt_'+id +'_0"><button class="qoption h4x Green" onclick="setanswer('+ id+ ',0,0)" type="button">' + responses[0]+ '</button></div>';
+xc+='<div class="xleft" id="qopt_'+id +'_1"><button class="qoption h4x Orange" onclick="setanswer('+ id+ ',1,1)" type="button">' + responses[1]+ '</button></div>';
+xc+='<div class="xleft" id="qopt_'+id +'_2"><button class="qoption h4x Red" onclick="setanswer('+ id+ ',2,3)" type="button">' + responses[2]+ '</button></div>';
+xc+='</div>';
+xc+='<div><button class="btn h3x xnext"  onclick="nextq()">'+ xstrings["next"][xlang] +'</button></div></div>';
+return xc;
+}
+
+function init(){
+var winw = window.innerWidth;
+var winh = window.innerHeight;
+document.getElementById("xpage").style.width=winw;
+//getlang();
+var xxc=qlist();
+document.getElementById("qlist").innerHTML=xxc;
+displaydiv("xpage","splash");
+privacy();
+}
+
+function xstart(){
+  displaydiv("xpage","home");
+  displaydiv("ux","intro");
+}
+
+function firstq(){
+actq=0;
+ var idx="dq" + actq;
+ displaydiv("ux",idx);
+}
+
+function nextq(){
+
+	score=answers[actq];
+	
+    if (score <0){
+	 return false;
+	}
+	
+	if (actq < nq-1 ){
+	    actq++;
+		var idx="dq" + actq;
+		displaydiv("ux",idx)
+	}
+	else{
+		calculate();
+	}
+}
+
+function setanswer(id,n,v){
+
+for (var i = 0; i < 3; i++){
+	var xx="qopt_"+id +"_" + i;
+	document.getElementById(xx).style.background="#093947";
+}
+
+answers[id]=v;
+var xxc="qopt_"+id +"_" + n;
+document.getElementById(xxc).style.background="#0c4e62";
+}
+
+function showquestion(idx){
+displaydiv("ux",idx)
+}
+
+function showhide(xdiv){
+	if (document.getElementById(xdiv).style.visibility=="visible"){
+		document.getElementById(xdiv).style.visibility="";
+	}else {
+		document.getElementById(xdiv).style.visibility="visible";
+	}
+}
+
+function displaydiv(xparent,xchild){
+	var x=document.getElementById(xchild).innerHTML;
+	document.getElementById(xparent).innerHTML=x;
+	activechild=xchild;
+}
+
+
+
+function splashscr(){
+
+//xstrings["xlang"]=["සිංහල", "தமிழ்", "ENGLISH"] ; 
+xstrings["splash"]=["Victims can be Bullies", "Vítimas podem ser opressores ", "Vítimas podem ser opressores"] ;
+xstrings["start"]=["START", "Começar", "Começar"] ;
+xstrings["xlangnext"]=["Español","Português","English"] ;
+ 
+ var xs='<div class="h2x">';
+ xs+=xstrings["splash"][xlang];
+ xs+='</div><div><img class="imgx" onclick="xstart()"  class="pointer" name="bully" src="bully.png"></a></div>';
+ xs+='<div class="go">  <button id="start" class="btn h3x strong" onclick="xlanguage(0)">'+xstrings["xlangnext"][xlang]+'</button>';
+ xs+='<button class="btn h3x" onclick="xstart()">'+ xstrings["start"][xlang] + '</button></div>';
+ xs+='<div class="h3x Blue pointer" onclick="respectgirls();">';
+ xstrings["respect"]=["RESPECT GIRLS ON INTERNET", "RESPEITE GAROTAS NA INTERNET", "RESPEITE GAROTAS NA INTERNET"] ;
+ xs+=xstrings["respect"][xlang];
+ xs+='</div>';
+ return xs;
+ 
+}
+function homescr(){
+xstrings["cyberGoodness"]=['Cyber Goodness',  'Ciber Bondade', 'Cyber Bondade'] ;
+
+var xs='<div id="xheader" class="h2x pointer" onclick="home();">'+ xstrings["cyberGoodness"][xlang]+ '</div>';
+xs+='<h1 id="fb-welcome"></h1>';
+xs+='<div id="ux"></div>';
+xs+='<div id="xfooter" class="h3x pointer" onclick="respectgirls();"><small>';
+xs+=xstrings["respect"][xlang];
+xs+='</small></div>';
+return xs;
+}
+function introscr(){
+xstrings["xintro"]=['<span class="Green">How cyber good you are?</span><br/>Take this quiz to find out<br/>', '<span class="Green">Quão bom internauta você é?</span> <br/>Faça esse quiz para achar!<br/> ', '<b<span class="Green">Quão bom internauta você é?</span> <br/>Faça esse quiz para achar!<br/>'] ;
+var xs='<div id="xintro" class="h2x">';
+
+xs+=xstrings["xintro"][xlang];
+xs+='<br/><button id="start" class="btn h3x" onclick="xlanguage(0)">'+xstrings["xlangnext"][xlang]+'</button>';
+xs+='<button id="start" class="btn h3x" onclick="firstq()">'+ xstrings["start"][xlang] + '</button></div>';
+return xs;
+}
+
+
+function privacy(){
+xstrings["privacy"]=['Privacy', 'Privacidad', 'Privacidade'] ;
+xstrings["terms"]=['Terms', 'Términos', 'Termos'] ;
+xstr='<div class="h5x xcenter White privacy"><a href="privacy.html">'+ xstrings["privacy"][xlang]+'</a> <a href="terms.html">'+ xstrings["terms"][xlang]+'</a></div>';
+document.getElementById("privacy").innerHTML=xstr;
+}
+</script>
+
+</head>
+
+
+<body onload="init()">
+<center>
+<div id="xpage"></div>
+</center>
+<!----components--->
+ <div id="splash" class="displaynone">
+ <script>
+ var xspstr=splashscr();
+ document.write(xspstr);
+ </script>
+ </div>
+ 
+<div id="home" class="displaynone">
+ <script>
+ var xhmstr=homescr();
+ document.write(xhmstr);
+ </script>
+</div>
+
+<!--<div>
+Give yourself 0 points if you’ve never done it
+1 point if you have done it 1 or 2 times
+, 2 points if you have done it 3-5 times, 3 points if you have done it more than 5 times.
+</div>-->
+
+
+ 
+
+ <div id="qlist"></div>
+ 
+ <div id="intro" class="displaynone">
+  <script>
+ var xintrostr=introscr();
+ document.write(xintrostr);
+ </script>
+</div>
+
+
+<!-- Method to share current page on Facebook-->
+<div class="share xcenter"><img src="facebook.png" onclick="fbShare()" class="pointer">
+<img src="gplus.png" onclick="gShare()" class="pointer">
+<img src="twitter.png" onclick="twShare()" class="pointer">
+<!--<img src="linkedIn.png" onclick="liShare()">-->
+<img width="32" class="pointer" src="appsmart.jpg" onclick="appsmart()">
+<img height="25" class="pointer" src="shilpasayura.png" onclick="shilpasayura()">
+<img height="32" class="pointer" src="isoc.png" onclick="isoc()">
+</div>
+<div id="privacy"></div>
+
+
+
+
+ 
+ 
+<div id="result1_0" class="displaynone">
+<div class="grade xleft">
+0 – 1: <span class="White gradetitle" >Cyber Saint</span><br/>
+</div>
+<div><img class="imgx2" src="saint.png"></div>
+<div class="gradetext White xleft">
+<span class="Yellow">You’re a cyber saint!</span><br/>
+<span class="Yellow">Your online behavior is exemplary!</span><br/>
+<span class="Green">Keep up the good work!</span>
+</div>
+</div>
+
+<div id="result2_0" class="displaynone">
+<div class="grade xleft">
+2-10: <span class="Orange gradetitle">Cyber Risky</span><br/>
+</div>
+<div ><img class="imgx2" src="risk.png"></div>
+<div class="gradetext xleft Gray">
+Well, you’re not perfect. <br/>
+You may have not done anything terrible.<br/> 
+But try not to repeat your behaviors,<br/>
+Keep in mind the pain that your fun might be causing others!
+</div>
+</div>
+
+<div id="result3_0" class="displaynone">
+<div class="grade xleft">
+ 11-18: <span class="Brown gradetitle">Cyber Sinner</span><br/>
+ </div>
+ <div><img class="imgx2" src="sinner.png"></div>
+<div class="gradetext xleft White">
+<span class="Brown">Your online behavior needs to be improved!</span><br/>
+<span class="White">Keep in mind that what you do online is dangerous, wrong, and punishable.<br/>
+<span class="White"> Now try to be clean up your cyber record!</span>
+</div>
+</div>
+
+<div id="result4_0" class="displaynone">
+<div class="grade xleft xh3">
+<span class="Red h2x">More than 18 : </span><span class="Red gradetitle">Cyber Bully</span><br/>
+</div>
+<div><img class="imgx2" src="bullys.png"></div>
+<div class="gradetext White xleft">
+Put your computer and phone a side and get advice.<br/>
+<span class="Red">You are heading in a very bad direction.
+ You need to sign off and think what would the results be for you and/or your victim(s).</span>
+</div>
+</div>
+
+<div id="result1_1" class="displaynone">
+<div class="grade xleft">
+0 – 1: <span class="White gradetitle" >Cyber Santo</span><br/>
+</div>
+<div><img class="imgx2" src="saint.png"></div>
+<div class="gradetext White xleft">
+<span class="Yellow">>Você é um internauta santo!</span><br/
+<span class="Yellow">Seu comportamento online é exemplar!</span><br/>
+<span class="Yellow">Continue o bom trabalho!</span><br/>
+</div>
+</div>
+
+<div id="result2_1" class="displaynone">
+<div class="grade xleft">
+2-10: <span class="Orange gradetitle">Cyber arriscado</span><br/>
+</div>
+<div ><img class="imgx2" src="risk.png"></div>
+<div class="gradetext xleft Gray">
+Bom, você não é perfeito.<br/>
+Talvez você não tenha feito algo terrível.<br/>
+Tente não repetir seu comportamento.<br/>
+Tenha em mente o sofrimento que sua brincadeira pode causar a outros!<br/>
+</div>
+</div>
+
+<div id="result3_1" class="displaynone">
+<div class="grade xleft">
+ 11-18: <span class="Brown gradetitle">Cyber pecador</span><br/>
+ </div>
+ <div><img class="imgx2" src="sinner.png"></div>
+<div class="gradetext xleft White">
+<span class="Brown">Seu comportamento online precisa ser melhorado!</span><br/>
+<span class="White">Tenha em mente que o que você faz online é perigoso, errado e punível.<br/>
+<span class="White"> Agora tente limpar o seu cyber registro!</span>
+</div>
+</div>
+
+<div id="result4_1" class="displaynone">
+<div class="grade xleft xh3">
+<span class="Red h2x">Mais de 18: : </span><span class="Red gradetitle">Cyber Opressor</span><br/>
+</div>
+<div><img class="imgx2" src="bullys.png"></div>
+<div class="gradetext White xleft">
+Deixe o computador e o telefone de lado e obtenha aconselhamento.<br/>
+<span class="Red">Você está caminhando em uma direção muito ruim.<br/>
+Você precisa se desconectar e pensar em quais serão os resultados para você e/ou sua(s) vítima(s).</span>
+</div>
+
+
+<div id="result1_2" class="displaynone">
+<div class="grade xleft">
+0 – 1: <span class="White gradetitle" >Cyber Santo</span><br/>
+</div>
+<div><img class="imgx2" src="saint.png"></div>
+<div class="gradetext White xleft">
+<span class="Yellow">Você é um internauta santo!</span><br/>
+<span class="Yellow">Seu comportamento online é exemplar!</span><br/>
+<span class="Green">Continue o bom trabalho!</span>
+</div>
+</div>
+
+<div id="result2_2" class="displaynone">
+<div class="grade xleft">
+2-10: <span class="Orange gradetitle">Cyber arriscado</span><br/>
+</div>
+<div ><img class="imgx2" src="risk.png"></div>
+<div class="gradetext xleft Gray">
+Bom, você não é perfeito.<br/>
+Talvez você não tenha feito algo terrível.<br/> 
+Tente não repetir seu comportamento<br/>
+Tenha em mente o sofrimento que sua brincadeira pode causar a outros!
+</div>
+</div>
+
+<div id="result3_2" class="displaynone">
+<div class="grade xleft">
+ 11-18: <span class="Brown gradetitle">Cyber pecador</span><br/>
+ </div>
+ <div><img class="imgx2" src="sinner.png"></div>
+<div class="gradetext xleft White">
+<span class="Brown">Seu comportamento online precisa ser melhorado.</span><br/>
+<span class="White">Tenha em mente que o que você faz online é perigoso, errado e punível.<br/>
+<span class="White">Agora tente limpar o seu cyber registro.</span>
+</div>
+</div>
+
+<div id="result4_2" class="displaynone">
+<div class="grade xleft xh3">
+<span class="Red h2x">Mais de 18:</span><span class="Red gradetitle">Cyber Opressor</span><br/>
+</div>
+<div><img class="imgx2" src="bullys.png"></div>
+<div class="gradetext White xleft">Deixe o computador e o telefone de lado e obtenha aconselhamento.<br/>
+<span class="Red">Você está caminhando em uma direção muito ruim.<br/>
+Você precisa se desconectar e pensar em quais serão os resultados para você e/ou sua(s) vítima(s)</span>
+ </div>
+</div>
+
+
+<script>
+/*x=7;
+if (x > 0){
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '736375086463742',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+
+    // ADD ADDITIONAL FACEBOOK CODE HERE
+	
+ function onLogin(response) {
+  if (response.status == 'connected') {
+    FB.api('/me?fields=first_name', function(data) {
+      var welcomeBlock = document.getElementById('fb-welcome');
+      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+    });
+  }
+}
+
+FB.getLoginStatus(function(response) {
+  // Check login status on load, and if the user is
+  // already logged in, go directly to the welcome message.
+  if (response.status == 'connected') {
+    onLogin(response);
+  } else {
+    // Otherwise, show Login dialog first.
+    FB.login(function(response) {
+      onLogin(response);
+    }, {scope: 'user_friends, email'});
+  }
+});
+
+
+function postToFeed(title, desc, url, image) {
+    var obj = {method: 'feed',link: url, picture: image,name: title,description: desc};
+    function callback(response) {}
+    FB.ui(obj, callback);
+}
+
+//var fbShareBtn = document.querySelector('.fb_share');
+var fbShareBtn = document.querySelector('#fbShareBtn')
+
+fbShareBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var title = fbShareBtn.getAttribute('data-title'),
+        desc = fbShareBtn.getAttribute('data-desc'),
+        url = fbShareBtn.getAttribute('href'),
+        image = fbShareBtn.getAttribute('data-image');
+    postToFeed(title, desc, url, image);
+
+    return false;
+});
+
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+
+}
+*/
+function fbShare(){
+var url=window.location.href;
+var xurl="https://www.facebook.com/sharer/sharer.php?u="+url;
+location.href=xurl;
+}
+
+function twShare(){
+var url=window.location.href;
+var title=document.title;
+var xurl="http://twitter.com/intent/tweet?url="+url+"&text="+title.substring(33,title.length)+"&via=";
+location.href=xurl;
+}
+
+function gShare(){
+var url=window.location.href;
+var xurl="https://plus.google.com/share?url="+url;
+location.href=xurl;
+}
+
+function gShare(){
+var url=window.location.href;
+var xurl="https://plus.google.com/share?url="+url;
+location.href=xurl;
+}
+
+function liShare(){
+var url=window.location.href;
+var xurl="https://www.linkedin.com/cws/share="+url;
+location.href=xurl;
+}
+
+function isoc(){
+var url=window.location.href;
+var xurl="https://www.internetsociety.org";
+location.href=xurl;
+}
+
+</script>
+
+
+
+</body>
+</html>
